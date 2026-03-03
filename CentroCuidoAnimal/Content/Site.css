@@ -1,0 +1,103 @@
+﻿/* ===== Parámetros Globales ===== */
+
+body {
+    background-color: #f5efe6; /* crema */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* ===== Centered Form Container ===== */
+.form-container {
+    background-color: #ffffff;
+    width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Wizard Progress ===== */
+.wizard-container {
+    margin-bottom: 20px;
+}
+
+.wizard-bar {
+    background-color: #e8dccd; /* light coffee */
+    height: 20px;
+    border-radius: 10px;
+}
+
+.wizard-progress {
+    background-color: #a67c52; /* coffee brown */
+    height: 20px;
+    border-radius: 10px;
+}
+
+/* ===== Inputs ===== */
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+
+/* ===== Botones ===== */
+button {
+    background-color: #a67c52;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+    button:hover {
+        background-color: #8c6239;
+    }
+
+/*New ones*/
+
+.wizard-container {
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+.wizard-bar {
+    background-color: #e0e0e0;
+    height: 20px;
+    border-radius: 10px;
+}
+
+.wizard-progress {
+    background-color: #28a745;
+    height: 20px;
+    border-radius: 10px;
+}
+
+.step-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Panel</h2>
+
+<p>Bienvenido @Session["NombreUsuario"]</p>
+<p>Rol: @Session["RolUsuario"]</p>
+
+@if (Session["RolUsuario"] != null && Session["RolUsuario"].ToString() == "Administrador")
+{
+    <hr />
+    <h3>Opciones Administrativas:</h3>
+    <a href="@Url.Action("Paso1", "Animal")" class="btn btn-primary">
+        1. Registrar Animal
+    </a>
+}
+
+<a href="/Cuenta/Logout">Salir</a>

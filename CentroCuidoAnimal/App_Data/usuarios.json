@@ -1,0 +1,12 @@
+﻿[
+  {
+    "NombreUsuario": "admin@cuidomascotas.com",
+    "Password": "a1b2c3",
+    "Rol": "Administrador"
+  },
+  {
+    "NombreUsuario": "ecorrales@cuidomascotas.com",
+    "Password": "181",
+    "Rol": "Usuario"
+  }
+]

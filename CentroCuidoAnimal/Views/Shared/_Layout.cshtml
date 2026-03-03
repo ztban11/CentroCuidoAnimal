@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Centro Cuido Animal</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    <nav style="background-color:#a67c52; padding:15px;">
+        <div style="width:90%; margin:auto; display:flex; justify-content:space-between; align-items:center; color:white;">
+
+            <div>
+                <strong>Centro de Cuido Animal</strong>
+            </div>
+
+            <div>
+                @if (Session["NombreUsuario"] != null)
+                {
+                    <span>Bienvenido @Session["NombreUsuario"] | </span>
+
+                    if (Session["RolUsuario"] != null && Session["RolUsuario"].ToString() == "Administrador")
+                    {
+                        @Html.ActionLink("Registrar Animal", "Paso1", "Animal", null, new { style = "color:white; margin-right:15px;" })
+                    }
+
+                    @Html.ActionLink("Panel", "Index", "Panel", null, new { style = "color:white; margin-right:15px;" })
+                    @Html.ActionLink("Logout", "Logout", "Cuenta", null, new { style = "color:white;" })
+                }
+                else
+                {
+                    @Html.ActionLink("Login", "Login", "Cuenta", null, new { style = "color:white;" })
+                }
+            </div>
+
+        </div>
+    </nav>
+    <div class="container body-content" style="margin-top:30px;">
+        @RenderBody()
+    </div>
+
+    <footer style="text-align:center; margin-top:40px; padding:15px; color:#777;">
+        &copy; @DateTime.Now.Year - Centro Cuido Animal
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

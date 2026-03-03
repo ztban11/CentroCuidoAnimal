@@ -1,0 +1,52 @@
+﻿
+@model CentroCuidoAnimal.ViewModels.RegistroAnimal_ViewModel
+
+@{
+    ViewBag.Title = "Paso2";
+}
+
+<div class="form-container">
+    <h2>Paso 2 de 3 - Información Salud</h2>
+
+    <div class="wizard-container">
+        <div>Paso 2 de 3</div>
+        <div class="wizard-bar">
+            <div class="wizard-progress" style="width:66%;"></div>
+        </div>
+    </div>
+
+    @using (Html.BeginForm("Paso2", "Animal", FormMethod.Post))
+    {
+        <div>
+            <label>
+                @Html.CheckBoxFor(m => m.bVacunado)
+                ¿Vacunado?:
+            </label>
+        </div>
+
+        <br />
+
+        <div>
+            <label>Peso (kg):</label>
+            @Html.TextBoxFor(m => m.dPeso)
+        </div>
+
+        <br />
+
+        <div>
+            <label>Edad:</label>
+            @Html.TextBoxFor(m => m.iEdad)
+        </div>
+
+        <br />
+
+        <div>
+            <label>Notas Médicas:</label>
+            @Html.TextAreaFor(m => m.sNotasMedicas, new { rows = 4 })
+        </div>
+
+        <br />
+
+        <button type="submit">Siguiente</button>
+    }
+</div>

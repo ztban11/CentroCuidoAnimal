@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <script src="@Url.Content("~/Scripts/jquery-3.7.0.min.js")"></script>
+    <!--<script src="~/Scripts/jquery-3.7.0.min.js"></script>-->
+</head>
+    <body>
+
+        <h2>Centro de Cuido Animal - BIENVENIDO!</h2>
+
+        <div>
+            <input type="text" id="idNombreUsuario" placeholder="Nombre de usuario o Email" />
+            <br />
+            <input type="password" id="idPassword" placeholder="Password" />
+            <span id="togglePassword" style="cursor:pointer;">👁</span>
+            <br />
+            <button id="btnLogin">Ingresar</button>
+        </div>
+
+        <div id="errorArea" style="color:red;"></div>
+
+        <script>
+    $(document).ready(function(){
+
+        $("#togglePassword").click(function(){
+            var input = $("#idPassword");
+            input.attr("type", input.attr("type") === "password" ? "text" : "password");
+        });
+
+        $("#btnLogin").click(function(){
+
+            var username = $("#idNombreUsuario").val(); //ztb: integración con el form mediante el id
+            var password = $("#idPassword").val();
+
+            if(!username || !password){
+                $("#errorArea").html("Todos los campos son requeridos.");
+                return;
+            }
+
+            $.ajax({
+                url: "/Cuenta/Login",
+                type: "POST",
+                data: { NombreUsuario: username, Password: password },
+                success: function(response){
+                    if(response.success){
+                        window.location.href = "/Panel/Index";
+                    } else {
+                        $("#errorArea").html("Error en credenciales. Intente nuevamente.");
+                    }
+                }
+            });
+
+        });
+
+    });
+        </script>
+
+    </body>
+    </html>

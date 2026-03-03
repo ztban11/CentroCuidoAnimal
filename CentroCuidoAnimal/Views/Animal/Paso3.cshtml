@@ -1,0 +1,58 @@
+﻿
+@model CentroCuidoAnimal.ViewModels.RegistroAnimal_ViewModel
+
+@{
+    ViewBag.Title = "Paso3";
+}
+
+<div class="form-container">
+    <h2>Paso 3 de 3 - Información de Recibo</h2>
+
+    <div class="wizard-container">
+        <div>Paso 3 de 3</div>
+        <div class="wizard-bar">
+            <div class="wizard-progress" style="width:99%;"></div>
+        </div>
+    </div>
+
+    @using (Html.BeginForm("Paso3", "Animal", FormMethod.Post))
+    {
+        <div>
+            <label>
+                Fecha recibo:
+                @Html.TextBoxFor(m => m.dtFechaRecibo, "{0:yyyy-MM-dd}",
+            new { @class = "form-control", type = "date" })
+            </label>
+        </div>
+
+        <br />
+
+        <div>
+            <label>Nombre Persona Responsable:</label>
+            @Html.TextBoxFor(m => m.sNombrePersonaResponsable,
+            new { @class = "form-control" })
+        </div>
+
+        <br />
+
+        <div>
+            <label>Ubicación:</label>
+            @Html.TextBoxFor(m => m.sUbicacionIncidente,
+            new { @class = "form-control" })
+        </div>
+
+        <br />
+
+        <div>
+            <label>Notas Adicionales:</label>
+            @Html.TextAreaFor(m => m.sNotasAdicionales,
+            new { @class = "form-control", rows = 4 })
+        </div>
+
+        <br />
+
+        <button type="submit">Siguiente</button>
+        @Html.ActionLink("Volver", "Paso1")
+    }
+</div>
+
