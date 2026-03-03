@@ -19,6 +19,8 @@ namespace CentroCuidoAnimal.Models
         public string EstadoSaludIngreso { get; set; }
         public string Temperamento { get; set; }
         public string NecesidadesMedicasInmediatas { get; set; }
+
+        public string HistorialVacunas { get; set; }
         //Datos Responsable
         public string NombreResponsable { get; set; }
         public string TelefonoResponsable { get; set; }

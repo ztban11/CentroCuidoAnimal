@@ -1,0 +1,35 @@
+﻿@model List<CentroCuidoAnimal.ViewModels.RegistroAnimal_ViewModel>
+
+@{
+    ViewBag.Title = "Lista";
+}
+
+<h2>Lista Pacientes</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Expediente:</th>
+            <th>Nombre:</th>
+            <th>Especie:</th>
+            <th>Ingreso:</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var animal in Model)
+        {
+            <tr>
+                <td>@animal.sNumeroExpediente</td>
+                <td>@animal.sNombre</td>
+                <td>@animal.sEspecie</td>
+                <td>@animal.dtFechaRecibo</td>
+                <td>
+                    @Html.ActionLink("Ver Ficha", "Detalle", "Animal",
+                        new { id = animal.sNumeroExpediente }, null)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

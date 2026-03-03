@@ -24,8 +24,10 @@
                     if (Session["RolUsuario"] != null && Session["RolUsuario"].ToString() == "Administrador")
                     {
                         @Html.ActionLink("Registrar Animal", "Paso1", "Animal", null, new { style = "color:white; margin-right:15px;" })
+                        @Html.ActionLink("Animales Activos", "Lista", "Animal", null, new { style = "color:white; margin-right:15px;" })
                     }
 
+                  <br />
                     @Html.ActionLink("Panel", "Index", "Panel", null, new { style = "color:white; margin-right:15px;" })
                     @Html.ActionLink("Logout", "Logout", "Cuenta", null, new { style = "color:white;" })
                 }

@@ -1,0 +1,23 @@
+﻿@model CentroCuidoAnimal.ViewModels.RegistroAnimal_ViewModel
+
+@{
+    ViewBag.Title = "Detalle";
+}
+
+<h2>Detalle del Paciente</h2>
+
+<p><strong>Expediente:</strong> @Model.sNumeroExpediente</p>
+<p><strong>Especie:</strong> @Model.sEspecie</p>
+<p><strong>Nombre:</strong> @Model.sNombre</p>
+
+<p><strong>Fecha Ingreso:</strong> @Model.dtFechaRecibo</p>
+
+<p><strong>Motivo Ingreso:</strong> @Model.sMotivoIngreso</p>
+<p><strong>Estado Salud:</strong> @Model.sEstadoSaludIngreso</p>
+<p><strong>Temperamento:</strong> @Model.sTemperamento</p>
+<p><strong>Necesidades Médicas:</strong> @Model.sNecesidadesInmediatas</p>
+<p><strong>Historial Vacunas:</strong> @Model.sHistorialVacunas</p>
+
+<h3>Contacto</h3>
+<p>@Model.sNombrePersonaResponsable - @Model.sTelefonoContacto - @Model.sEmailContacto</p>
+
